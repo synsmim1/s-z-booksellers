@@ -1,0 +1,159 @@
+<div class="search-area" id="searching">
+            <input type="text" id='search-bar' placeholder="Search for book titles here...">
+            <a href="#mystery" class="options">Dracula</a>
+            <a href="#mystery" class="options">The Silent Patient</a>
+            <a href="#mystery" class="options">Gone Girl</a>
+            <a href="#mystery">The Girl on the Train</a>
+            <a href="#mystery">In the Woods</a>
+            <a href="#mystery">A Good Girl's Guide to Murder</a>
+            <a href="#mystery">The Inheritance Games</a>
+            <a href="#mystery">We Were Liars</a>
+            <a href="#history">Sapiens: A Brief History of Humankind</a>
+            <a href="#history">A People's History of the United States</a>
+            <a href="#history">The 1619 Project: A New Origin Story</a>
+            <a href="#history">Salt: A World History</a>
+            <a href="#history">The Immortal Life of Henrietta Lacks</a>
+            <a href="#history">John Adams</a>
+            <a href="#history">Hidden Figures</a>
+            <a href="#history">Galileo's Daughter: A Historical Memoir of Science, Faith and Love</a>
+            <a href="#romance">Pride and Prejudice</a>
+            <a href="#romance">The Fault in Our Stars</a>
+            <a href="#romance">The Seven Husbands of Evelyn Hugo</a>
+            <a href="#romance">Jane Eyre</a>
+            <a href="#romance">Terms and Conditions</a>
+            <a href="#romance">The Last Song</a>
+            <a href="#romance">The Great Gatsby</a>
+            <a href="#romance">The Fastest Way to Fall</a>
+            <a href="#memoirs">Becoming</a>
+            <a href="#memoirs">Bossypants</a>
+            <a href="#memoirs">Born a Crime: Stories From a South African Childhood</a>
+            <a href="#memoirs">I'm Glad My Mom Died</a>
+            <a href="#memoirs">The Diary of a Young Girl</a>
+            <a href="#memoirs">Yes Please</a>
+            <a href="#memoirs">Eat, Pray, Love</a>
+            <a href="#memoirs">I Am Malala: The Story of the Girl Who Stood Up for Education and Was Shot by the Taliban</a>
+            <a href="#science">A Brief History of Time</a>
+            <a href="#science">Astrophysics for People in a Hurry</a>
+            <a href="#science">Cosmos</a>
+            <a href="#science">Why We Sleep: Unlocking the Power of Sleep and Dreams</a>
+            <a href="#science">Thinking, Fast and Slow</a>
+            <a href="#science">Brief Answers to the Big Questions</a>
+            <a href="#science">Packing for Mars: The Curious Science of Life in the Void</a>
+            <a href="#science">Behave: The Biology of Humans at Our Best and Worst</a>
+            <button type="search" id="search-button"><img src='/images/search icon.jpeg' alt="search icon" class="search-icon"></button>        
+        </div>
+
+
+
+#search-button{
+   cursor: pointer;
+   border-radius: 50%;
+   padding: 10px 10px;
+   height: 35px;
+   border: none;
+}
+.search-icon{
+   width: 15px;
+   float: right;
+}
+
+.shopping-button{
+   border: none;
+   float: right;
+   cursor: pointer;
+   padding: 0px 20px;
+}
+
+
+
+// search bar
+let searchInput = document.getElementById('search-input');
+let searchInputLC = searchInput.value.toLowerCase;
+// let bookTitle = document.getElementsByClassName('name-card');
+let bookTitle = document.getElementsByClassName('options');
+let bookAuthor = document.getElementsByClassName('author');
+let searchButton = document.getElementById('search-button');
+let booksCard = document.getElementsByClassName('books');
+
+let bookData = document.getElementsByClassName('options')
+
+let shoppingCart = (function() {
+  cart = [];
+
+
+  function bookItem(name, price, count) {
+    this.name = name;
+    this.price = price;
+    this.count = count;
+  }
+
+  function saveCart() {
+    sessionStorage.setItem('shoppingCart', JSON.stringify(cart));
+  }
+
+
+
+
+}
+)
+
+// variables
+let bookTitles = document.getElementsByClassName('name-card');
+let bookPrice = document.getElementsByClassName('price');
+
+
+//shopping cart 
+function addItem(){
+  output += "<tr>"
+      + "<td>" + bookTitles[i] + "</td>" 
+      + "<td>(" + bookPrice[i] + ")</td>"
+      + "<td><div class='input-group'><button class='minus-item input-group-addon btn btn-primary' data-name=" + cartArray[i].name + ">-</button>"
+      + "<input type='number' class='item-count form-control' data-name='" + cartArray[i].name + "' value='" + cartArray[i].count + "'>"
+      + "<button class='plus-item btn btn-primary input-group-addon' data-name=" + cartArray[i].name + ">+</button></div></td>"
+      + "<td><button class='delete-item btn btn-danger' data-name=" + cartArray[i].name + ">X</button></td>"
+      + " = " 
+      + "<td>" + cartArray[i].total + "</td>" 
+      +  "</tr>";
+}
+
+
+let shoppingList = function(){
+  cart = [];
+
+  function item(name, price, count) {
+    this.name = name;
+    this.price = price;
+    this.count = count;
+  }
+
+  function saveCart() {
+    sessionStorage.setItem('shoppingCart', JSON.stringify(cart));
+  }
+
+  function loadCart() {
+    cart = JSON.parse(sessionStorage.getItem('shoppingCart'));
+  }
+  if (sessionStorage.getItem("shoppingCart") != null) {
+    loadCart();
+  }
+
+  let obj = {};
+
+  obj.addItemToCart = function(name, price, count) {
+    for(let item in cart) {
+      if(cart[item].name === name) {
+        cart[item].count ++;
+        saveCart();
+        return;
+      }
+    }
+    let item = new Item(name, price, count);
+    cart.push(item);
+    saveCart();
+  }
+}
+
+https://codepen.io/chrisachinga/pen/MWwrZLJ
+
+https://leetcode.com/assessment/
+

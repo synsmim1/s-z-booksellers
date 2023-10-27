@@ -1,0 +1,200 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+   font-family: 'Inter', sans-serif;
+   font-family: 'Sen', sans-serif;
+}
+/* Nav Bar */
+.navbar{
+   width: 100%;
+   background: #5ce1e6;
+   display: flex;
+   position: fixed;
+}
+.logo-img{
+   width: 100px;
+   height: auto;
+}
+.search-area{
+   display: inline-block;
+   display: block;
+   margin: 25px auto;
+}
+.navbar input{
+   width: 500px;
+   height: 50px;
+   border-radius: 12px;
+   border: none;
+   padding: 10px;
+   display: none;
+}
+/* .navbar .search-area a{
+   display: block;
+   color: black;
+   background-color: white;
+   padding: 10px;
+   border-radius: 12px;
+   border: 1px solid;
+} */
+#search-button{
+   cursor: pointer;
+   border-radius: 50%;
+   padding: 10px 10px;
+   height: 35px;
+   border: none;
+   display: none;
+}
+.search-icon{
+   width: 15px;
+   float: right;
+}
+.shopping{
+   width: 32px;
+   height: 30px;
+   float: right;
+   border: none;
+}
+.shopping-button{
+   border: none;
+   float: right;
+   cursor: pointer;
+   padding: 0px 20px;
+}
+ul{
+   display: flex;
+   justify-content: center;
+}
+ul li{
+   padding-top: 150px;
+   margin: 10px;
+}
+.first-item{
+   list-style-type: none;
+}
+.addBtn:link{
+   color:#4bbbbf;
+   text-decoration: underline;
+}
+.addBtn:visited{
+   color:#8c52ff;
+}
+/* Body */
+h4{
+   font-weight: 400;
+   text-align: center;
+   font-size: 30px;
+   padding: 10px;
+}
+.mystery-section, .history-section, .romance-section, .memoirs-section, .science-section{
+   display: block;
+   padding-right: 25px;
+   text-align: center;
+}
+.book-card{
+   box-sizing: border-box;
+   display: inline-grid;
+   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+   grid-template-rows: auto auto auto auto;
+   justify-content: space-evenly;
+   align-content: space-evenly;
+   row-gap: 50px;
+   width: 100%;
+}
+.books{
+   text-align: center;
+   align-items: center;
+   font-weight: 200;
+   width: 300px;
+   padding: 10px;
+}
+.books img{
+   width: auto;
+   height: 120px;
+   border-radius: 10px;
+}
+.books .name-card{
+   margin-top: 10px;
+}
+/* table */
+table{
+   width: 80%;
+   margin: 0 auto;
+   font-size: 18px;
+   font-weight: 200;
+}
+table tr th{
+   text-align: center;
+   margin: 0 auto;
+   width: 25%;
+   padding: 5px;
+   text-decoration: underline;
+}
+table tr td{
+   text-align: center;
+   margin: 0 auto;
+   padding: 5px;
+}
+table tr td input{
+   width: 25%;
+   padding: 5%;
+}
+table tr td button{
+   display: block;
+   margin: 12px auto;
+   font-size: 13px;
+   background-color: red;
+   color: white;
+   padding: 8px;
+   border: none;
+   border-radius: 10px;
+}
+.cart h5{
+   font-size: 16px;
+   text-align: center;
+   padding: 3px;
+   margin: 0 auto;
+}
+
+/* submit btn */
+.button button{
+   display: block;
+   margin: 12px auto;
+   font-size: 16px;
+   background-color:#57cfd3;
+   color: white;
+   padding: 8px;
+   border: none;
+   border-radius: 10px;
+}
+.button{
+   margin-bottom: 80px;
+}
+.remove-button, .button button{
+   cursor: pointer;
+}
+
+@media only screen and (max-width: 550px) {
+   *{
+      font-size: 13px;
+   }
+   .navbar{
+      width:99.9%;
+   }
+   ul{
+      margin-left: -40px;
+      justify-content: center;
+   }
+   .book-card{
+      row-gap: 10px;
+   }
+   .books{
+      margin: 0 auto;
+   }
+   .cart-book-title{
+      display: none;
+   }
+   table, tbody td h5{
+      width: 70%;
+      font-size: 13px;
+   }
+ }
